@@ -63,26 +63,22 @@ public class MyHomeRecyclerViewAdapter extends RecyclerView.Adapter<MyHomeRecycl
         }
         checkBox.setChecked(z);
         viewHolder.lock.setTag(Integer.valueOf(i));
-        viewHolder.lock.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            /* class com.vestaentertainment.whatsappchatloker.fragment.MyHomeRecyclerViewAdapter.C07761 */
-
-            @RequiresApi(api = 23)
-            public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                HomeModel homeModel = new HomeModel();
-                homeModel.setId(((HomeModel) MyHomeRecyclerViewAdapter.this.mValues.get(i)).getId());
-                if (z) {
-                    Toast.makeText(MyHomeRecyclerViewAdapter.this.context, "Chat UnLocked", Toast.LENGTH_SHORT).show();
-                    AppAdmob.showInterstitial(MyHomeRecyclerViewAdapter.this.context, true, false);
-                    homeModel.setIsLock(0);
-                } else {
-                    Toast.makeText(MyHomeRecyclerViewAdapter.this.context, "Chat Locked", Toast.LENGTH_SHORT).show();
-                    AppAdmob.showInterstitial(MyHomeRecyclerViewAdapter.this.context, true, false);
-                    homeModel.setIsLock(1);
-                }
-                homeModel.setUsername(((HomeModel) MyHomeRecyclerViewAdapter.this.mValues.get(i)).getUsername());
-                homeModel.setIsToCheckLock(((HomeModel) MyHomeRecyclerViewAdapter.this.mValues.get(i)).getIsToCheckLock());
-                MyHomeRecyclerViewAdapter.this.databaseHandler.updateChatLock(homeModel);
+        /* class com.vestaentertainment.whatsappchatloker.fragment.MyHomeRecyclerViewAdapter.C07761 */
+        viewHolder.lock.setOnCheckedChangeListener((compoundButton, z1) -> {
+            HomeModel homeModel = new HomeModel();
+            homeModel.setId(MyHomeRecyclerViewAdapter.this.mValues.get(i).getId());
+            if (z1) {
+                Toast.makeText(MyHomeRecyclerViewAdapter.this.context, "Chat UnLocked", Toast.LENGTH_SHORT).show();
+                AppAdmob.showInterstitial(MyHomeRecyclerViewAdapter.this.context, true, false);
+                homeModel.setIsLock(0);
+            } else {
+                Toast.makeText(MyHomeRecyclerViewAdapter.this.context, "Chat Locked", Toast.LENGTH_SHORT).show();
+                AppAdmob.showInterstitial(MyHomeRecyclerViewAdapter.this.context, true, false);
+                homeModel.setIsLock(1);
             }
+            homeModel.setUsername(MyHomeRecyclerViewAdapter.this.mValues.get(i).getUsername());
+            homeModel.setIsToCheckLock(MyHomeRecyclerViewAdapter.this.mValues.get(i).getIsToCheckLock());
+            MyHomeRecyclerViewAdapter.this.databaseHandler.updateChatLock(homeModel);
         });
         if (this.selectedIds.contains(Integer.valueOf(this.mValues.get(i).getId()))) {
             if (Build.VERSION.SDK_INT >= 23) {
@@ -91,13 +87,10 @@ public class MyHomeRecyclerViewAdapter extends RecyclerView.Adapter<MyHomeRecycl
         } else if (Build.VERSION.SDK_INT >= 23) {
             viewHolder.rlMain.setForeground(new ColorDrawable(ContextCompat.getColor(this.context, R.color.transpherent)));
         }
-        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
-            /* class com.vestaentertainment.whatsappchatloker.fragment.MyHomeRecyclerViewAdapter.View$OnClickListenerC07772 */
-
-            public void onClick(View view) {
-                if (MyHomeRecyclerViewAdapter.this.mListener != null) {
-                    MyHomeRecyclerViewAdapter.this.mListener.onListFragmentInteraction(viewHolder.mItem);
-                }
+        /* class com.vestaentertainment.whatsappchatloker.fragment.MyHomeRecyclerViewAdapter.View$OnClickListenerC07772 */
+        viewHolder.mView.setOnClickListener(view -> {
+            if (MyHomeRecyclerViewAdapter.this.mListener != null) {
+                MyHomeRecyclerViewAdapter.this.mListener.onListFragmentInteraction(viewHolder.mItem);
             }
         });
     }
@@ -111,7 +104,7 @@ public class MyHomeRecyclerViewAdapter extends RecyclerView.Adapter<MyHomeRecycl
         return this.mValues.get(i);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView apphabet_text;
         public final CheckBox lock;
         public HomeModel mItem;
@@ -123,9 +116,9 @@ public class MyHomeRecyclerViewAdapter extends RecyclerView.Adapter<MyHomeRecycl
             super(view);
             this.mView = view;
             this.apphabet_text =  view.findViewById(R.id.apphabet_text);
-            this.textView_name = (TextView) view.findViewById(R.id.textView_name);
-            this.lock = (CheckBox) view.findViewById(R.id.lock);
-            this.rlMain = (LinearLayout) view.findViewById(R.id.llMain);
+            this.textView_name = view.findViewById(R.id.textView_name);
+            this.lock = view.findViewById(R.id.lock);
+            this.rlMain = view.findViewById(R.id.llMain);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.ViewHolder

@@ -1,7 +1,6 @@
 package com.dktechhub.chatlockerforwhatsapp;
 
 
-import androidx.lifecycle.ProcessLifecycleOwner;
 import androidx.multidex.MultiDexApplication;
 
 //import androidx.lifecycle.Process
