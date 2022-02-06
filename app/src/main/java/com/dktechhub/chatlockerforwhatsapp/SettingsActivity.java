@@ -206,19 +206,16 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         public void showBatteryDialog() {
+            /* class com.vestaentertainment.whatsappchatloker.SettingsActivity.SettingsFragment.DialogInterface$OnClickListenerC07577 */
             new AlertDialog.Builder(getActivity()).setTitle(getString(R.string.app_name)).setMessage("Battery Optimization is already enabled! Do you want to change it?").setIcon(R.mipmap.ic_launcher).setCancelable(true).setNegativeButton(getResources().getString(R.string.f69no), new DialogInterface.OnClickListener() {
                 /* class com.vestaentertainment.whatsappchatloker.SettingsActivity.SettingsFragment.DialogInterface$OnClickListenerC07588 */
 
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
                 }
-            }).setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
-                /* class com.vestaentertainment.whatsappchatloker.SettingsActivity.SettingsFragment.DialogInterface$OnClickListenerC07577 */
-
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    SettingsFragment.this.startActivity(new Intent("android.settings.SETTINGS"));
-                    dialogInterface.dismiss();
-                }
+            }).setPositiveButton(getResources().getString(R.string.yes), (dialogInterface, i) -> {
+                SettingsFragment.this.startActivity(new Intent("android.settings.SETTINGS"));
+                dialogInterface.dismiss();
             }).show();
         }
 

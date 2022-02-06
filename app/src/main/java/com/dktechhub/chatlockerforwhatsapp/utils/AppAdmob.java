@@ -5,28 +5,22 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.LinearLayout;
 
-import com.dktechhub.chatlockerforwhatsapp.ads.AppSettings;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-
 public class AppAdmob {
     public static int mCount;
     public static int mCount2;
-    public static InterstitialAd mInterstitialAd;
+    //public static InterstitialAd mInterstitialAd;
 
     @SuppressLint({"MissingPermission"})
     public static void bannerCall(Activity activity, final LinearLayout linearLayout) {
         linearLayout.setVisibility(0);
-        AdView adView = new AdView(activity);
-        adView.setAdUnitId(AppSettings.banner);
-        adView.setAdSize(AdSize.SMART_BANNER);
+        //AdView adView = new AdView(activity);
+        //adView.setAdUnitId(AppSettings.banner);
+        //adView.setAdSize(AdSize.SMART_BANNER);
         //adView.loadAd(AppConsent.getAdRequest(activity));
-        linearLayout.setVisibility(8);
-        linearLayout.addView(adView);
-        adView.setAdListener(new AdListener() {
-            /* class com.vestaentertainment.whatsappchatloker.ads.AppAdmob.C07611 */
+        //linearLayout.setVisibility(8);
+        //linearLayout.addView(adView);
+        /*adView.setAdListener(new AdListener() {
+
 
             @Override // com.google.android.gms.ads.AdListener
             public void onAdLoaded() {
@@ -34,6 +28,7 @@ public class AppAdmob {
                 linearLayout.setVisibility(0);
             }
         });
+        */
     }
 
     public static void initInterstitial(final Activity activity) {

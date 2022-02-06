@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <Preference android:title="@string/version" android:key="@string/version_key" android:summary="1.1.1" app:iconSpaceReserved="false"/>
-    <Preference android:enabled="false" android:title="@string/consent" android:key="@string/consent_key" android:summary="@string/consent_summary" app:iconSpaceReserved="false"/>
     <Preference android:title="@string/more_apps" android:key="@string/more_key" android:summary="@string/more_apps_summary" app:iconSpaceReserved="false"/>
     <Preference android:title="@string/rate_app" android:key="@string/rate_key" android:summary="@string/rate_app_summary" app:iconSpaceReserved="false"/>
     <Preference android:title="@string/share_app" android:key="@string/share_key" android:summary="@string/share_app_summary" app:iconSpaceReserved="false"/>

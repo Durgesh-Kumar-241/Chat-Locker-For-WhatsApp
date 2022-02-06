@@ -12,15 +12,12 @@ import androidx.preference.Preference;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.viewbinding.BuildConfig;
 
 import com.dktechhub.chatlockerforwhatsapp.ads.AppSettings;
 
 
 public class AboutActivity extends AppCompatActivity {
-    private boolean isRequestLocationInEeaOrUnknown;
 
-    /* access modifiers changed from: protected */
     @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -37,7 +34,9 @@ public class AboutActivity extends AppCompatActivity {
         public static void shareApp(Context context) {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.SEND");
-            //intent.putExtra("android.intent.extra.TEXT", String.format(context.getString(R.string.share_app_message), context.getString(R.string.app_name),"com.dktechhub.chatlockerforwhatsapp"));
+            String text = context.getString(R.string.share_app_message);
+            text = String.format(text,"com.dktechhub.chatlockerforwhatsapp");
+            intent.putExtra("android.intent.extra.TEXT",text);
             intent.setType("text/plain");
             context.startActivity(intent);
         }
@@ -45,6 +44,8 @@ public class AboutActivity extends AppCompatActivity {
         @Override // androidx.preference.PreferenceFragmentCompat
         public void onCreatePreferences(Bundle bundle, String str) {
             setPreferencesFromResource(R.xml.pref_about, str);
+            setVersionAsSummary();
+            //setVersionAsSummary((Preference) findPreference(getContext().getString(R.string.version_key)));
         }
 
         @Override // androidx.preference.PreferenceManager.OnPreferenceTreeClickListener, androidx.preference.PreferenceFragmentCompat
@@ -81,10 +82,10 @@ public class AboutActivity extends AppCompatActivity {
         private void showRate(Activity activity) {
             String packageName = activity.getPackageName();
             try {
-                activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + packageName)));
+                activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)));
             } catch (ActivityNotFoundException unused) {
             }
-            activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://play.google.com/store/apps/details?id=" + packageName)));
+            activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)));
         }
 
         private void sendmail() {
@@ -100,8 +101,8 @@ public class AboutActivity extends AppCompatActivity {
             startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://search?q=pub:" + AppSettings.moreApps)));
         }
 
-        private void setVersionAsSummary(android.preference.Preference preference) {
-            preference.setSummary(BuildConfig.BUILD_TYPE);
+        private void setVersionAsSummary() {
+            findPreference(getContext().getString(R.string.version_key)).setSummary(BuildConfig.VERSION_NAME);
         }
     }
 }

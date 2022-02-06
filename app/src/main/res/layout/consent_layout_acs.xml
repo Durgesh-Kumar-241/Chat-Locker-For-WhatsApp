@@ -18,7 +18,8 @@
                 <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@+id/confirmButton" android:layout_width="90dp" android:layout_height="35dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" app:cardBackgroundColor="@color/colorPrimary" app:cardCornerRadius="10dp">
                     <TextView android:textSize="17sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ACCEPT"/>
                 </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@+id/anullerButton" android:layout_width="90dp" android:layout_height="35dp" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" app:cardBackgroundColor="@color/view_gray_color" app:cardCornerRadius="10dp">
+                <androidx.cardview.widget.CardView android:layout_gravity="center"
+                    android:layout_width="90dp" android:layout_height="35dp" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" app:cardBackgroundColor="@color/view_gray_color" app:cardCornerRadius="10dp">
                     <TextView android:textSize="17sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DECLINE"/>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
