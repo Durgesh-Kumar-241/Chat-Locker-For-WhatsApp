@@ -8,6 +8,6 @@ public class AppSettings {
     public static String moreApps = "FutureDroid.inc";
     public static int nbShowInterstitial = 60;
     public static int nbShowInterstitial2 = 3;
-    public static String privacyPolicy = "";
+    public static String privacyPolicy = "https://durgesh-kumar-241.github.io/Chat-Locker-For-WhatsApp/privacyPolicy.html";
     public static String pubId = "pub-8508428844152113";
 }
