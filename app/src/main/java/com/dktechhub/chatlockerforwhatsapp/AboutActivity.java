@@ -35,7 +35,7 @@ public class AboutActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.SEND");
             String text = context.getString(R.string.share_app_message);
-            text = String.format(text,"com.dktechhub.chatlockerforwhatsapp");
+            text = String.format(text,BuildConfig.APPLICATION_ID);
             intent.putExtra("android.intent.extra.TEXT",text);
             intent.setType("text/plain");
             context.startActivity(intent);
@@ -80,12 +80,13 @@ public class AboutActivity extends AppCompatActivity {
         }
 
         private void showRate(Activity activity) {
-            String packageName = activity.getPackageName();
+
             try {
                 activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)));
             } catch (ActivityNotFoundException unused) {
+                activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)));
+
             }
-            activity.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)));
         }
 
         private void sendmail() {
