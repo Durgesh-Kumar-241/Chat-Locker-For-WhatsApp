@@ -18,9 +18,8 @@ public class LockActivity extends AppCompatActivity {
     boolean closeChat = false;
     String fromService = "";
     private final PFLockScreenFragment.OnPFLockScreenCodeCreateListener mCodeCreateListener = new PFLockScreenFragment.OnPFLockScreenCodeCreateListener() {
-        /* class com.vestaentertainment.whatsappchatloker.LockActivity.C07321 */
 
-        @Override // com.beautycoder.pflockscreen.fragments.PFLockScreenFragment.OnPFLockScreenCodeCreateListener
+        @Override
         public void onCodeCreated(String str) {
             Toast.makeText(LockActivity.this, "Code created", Toast.LENGTH_LONG).show();
             SharedPrefUtils.saveData(LockActivity.this, SharedPrefUtils.keylockPasscode, str);
@@ -147,15 +146,18 @@ public class LockActivity extends AppCompatActivity {
         if (str == null) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
-        } else if (str.equalsIgnoreCase("Whatsapp")) {
-            Intent intent = new Intent();
-            intent.setClassName("com.whatsapp", "com.whatsapp.HomeActivity");
-            intent.addFlags(1342177280);
-            intent.addFlags(67108864);
-            startActivityForResult(intent, 9);
+        } else  {
+            //Intent intent = new Intent();
+            //intent.setClassName("com.whatsapp", "com.whatsapp.HomeActivity");
+            //intent.addFlags(1342177280);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            //startActivityForResult(intent, 9);
             finish();
-        } else {
+        }
+        /*else {
             moveTaskToBack(true);
         }
+
+         */
     }
 }

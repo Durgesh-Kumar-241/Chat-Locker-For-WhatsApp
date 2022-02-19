@@ -13,6 +13,7 @@ public class MyApplication extends MultiDexApplication {
         //ProcessLifecycleOwner.get().getLifecycle().addObserver(this);
         super.onCreate();
         AppDatabase.initialize(this);
+        AppDatabase.getInstance().loadAll();
         //MobileAds.initialize(getApplicationContext(), AppSettings.pubId);
     }
 

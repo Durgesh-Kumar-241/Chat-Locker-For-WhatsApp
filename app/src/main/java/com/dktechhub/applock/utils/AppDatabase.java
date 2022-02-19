@@ -49,19 +49,6 @@ public class AppDatabase extends SQLiteOpenHelper {
     }
 
 
-    public static void isLocked(String packageName)
-    {
-
-    }
-    public static void addApp(AppModel appModel)
-    {
-
-    }
-    public static void removeApp(AppModel appModel)
-    {
-
-    }
-
     @SuppressLint("Range")
     public HashMap<String, Pair<Integer, Integer>> loadAll()
     {
@@ -98,12 +85,9 @@ public class AppDatabase extends SQLiteOpenHelper {
             String q = String.format("UPDATE %s SET %s = %d WHERE %s = %d",TABLE_NAME,KEY_IS_LOCKED,appModel.isLocked,KEY_ID,appModel.id);
             writable.execSQL(q);
         }
+        allApps.put(appModel.packageName, new Pair<>(appModel.id,appModel.isLocked));
     }
-    public static void reloadFromDB()
-    {
-        all.clear();
-        //load again
-    }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

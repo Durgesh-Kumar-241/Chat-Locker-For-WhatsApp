@@ -28,13 +28,13 @@ public class AccessibilityServiceHandler extends AccessibilityService {
                 if(s.equals(currentAccessibilityPackage))
                     return;
                 this.currentAccessibilityPackage = s;
-                Log.d("AppLock","Window changed"+currentAccessibilityPackage);
+
                 Toast.makeText(this, "Window changed :"+currentAccessibilityPackage, Toast.LENGTH_SHORT).show();
-                Log.d("AppLock",accessibilityEvent.getPackageName().toString());
-                Log.d("AppLock", String.valueOf(accessibilityEvent.getEventType()));
-                Log.d("AppLock",accessibilityEvent.toString());
                 if(AppDatabase.allApps.containsKey(currentAccessibilityPackage)&&AppDatabase.allApps.get(currentAccessibilityPackage).second==1)
+                {
                     Toast.makeText(this, "locked app", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this,LockActivity.class));
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

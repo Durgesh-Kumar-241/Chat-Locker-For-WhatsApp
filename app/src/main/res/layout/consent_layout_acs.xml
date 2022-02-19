@@ -5,9 +5,30 @@
             <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#111" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="ACCESSIBILITY PERMISSION CONSENT"/>
             <View android:background="#eee" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp"/>
             <LinearLayout android:orientation="vertical" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="16sp" android:textColor="#333" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="WhatsApp Locker Needs Accessibility Permission to Run Its Core Functionality. Permission Will Be Used Only To:"/>
-                <TextView android:textSize="16sp" android:textStyle="italic" android:textColor="#333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="1. Monitor wich chat you open/close on Whatsapp Messenger.\10\10 2. Lock/Unlock Specific Chat on Whatsapp Messenger."/>
-                <TextView android:textSize="15sp" android:textColor="#38813b" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="NOTE: WE DO NOT READ OR ACCESS YOUR CHATS/FILES. THIS PERMISSION DOES NOT ALLOW US TO READ OR ACCESS ANY OF YOUR CHATS/FILES."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="App Locker Needs Accessibility Permission to Run Its Core Functionality. Permission Will Be Used Only To:"
+                    android:textColor="#333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="1. Monitor which apps you use/open.\n2.Lock/Unlock specific apps locked by you."
+                    android:textColor="#333"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="NOTE: WE DO NOT READ OR ACCESS YOUR FILES/PERSONAL DATA. THIS PERMISSION DOES NOT ALLOW US TO READ OR ACCESS ANY OF YOUR FILES/PERSONAL DATA."
+                    android:textColor="#38813b"
+                    android:textSize="15sp" />
             </LinearLayout>
             <View android:background="#eee" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="10dp"/>
             <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
