@@ -33,7 +33,7 @@ public class AccessibilityServiceHandler extends AccessibilityService {
                 if(AppDatabase.allApps.containsKey(currentAccessibilityPackage)&&AppDatabase.allApps.get(currentAccessibilityPackage).second==1)
                 {
                     Toast.makeText(this, "locked app", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(this,LockActivity.class));
+                    startActivity(new Intent(context,LockActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_NO_HISTORY));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
