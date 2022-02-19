@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ASMSmaliIdeaPluginConfiguration">
+    <asm skipDebug="true" skipFrames="true" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/drawable/back_list_apps.xml" value="0.1" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/drawable/backgound_activity.xml" value="0.1" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/drawable/circularview.xml" value="0.2035" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/drawable/locker_selector.xml" value="0.2035" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/activity_about.xml" value="0.2734375" />
@@ -12,8 +18,11 @@
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/activity_settings.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/activity_splash.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/consent_layout_acs.xml" value="0.2734375" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/fragment_apps.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/fragment_home.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/fragment_home_list.xml" value="0.2734375" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/item_app.xml" value="0.2734375" />
+        <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/layouthome_new.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/layout/settings_activity.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/menu/menu_main.xml" value="0.2734375" />
         <entry key="..\:/Users/Durgesh Kumar Dev/AndroidStudioProjects/ChatLockerForWhatsApp/app/src/main/res/menu/menu_select.xml" value="0.2734375" />

@@ -48,4 +48,6 @@
     <string name="changepinDialog">Change your pin</string>
     <string name="f69no">No</string>
     <string name="share_app_message">"Hey there, Use this Awesome app to Lock your WhatsApp Chats, and keep them Private…Download ChatLocker for WhatsApp Now :https://play.google.com/store/apps/details?id=%s"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

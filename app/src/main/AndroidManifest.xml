@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dktechhub.chatlockerforwhatsapp">
+    package="com.dktechhub.applock">
 
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -14,7 +14,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
     <uses-feature
         android:name="android.hardware.fingerprint"
         android:required="false" />
@@ -22,7 +23,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name="com.dktechhub.applock.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
@@ -35,7 +36,7 @@
         tools:ignore="UnusedAttribute">
 
         <activity
-            android:name=".SplashActivity"
+            android:name="com.dktechhub.applock.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -45,21 +46,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AboutActivity"
+            android:name="com.dktechhub.applock.AboutActivity"
             android:exported="false"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.dktechhub.applock.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.dktechhub.applock.MainActivity" />
         </activity>
         <activity
-            android:name=".PermissionsActivity"
+            android:name="com.dktechhub.applock.PermissionsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <receiver
-            android:name=".utils.RebootReciver"
+            android:name="com.dktechhub.applock.utils.RebootReciver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -73,7 +74,7 @@
 
 
         <service
-            android:name=".utils.AccessibilityServiceHandler"
+            android:name="com.dktechhub.applock.utils.AccessibilityServiceHandler"
             android:exported="false"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
@@ -86,45 +87,31 @@
         </service>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.dktechhub.applock.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
 
-        <activity android:name=".GesturelockActivity" />
+        <activity android:name="com.dktechhub.applock.GesturelockActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.dktechhub.applock.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:launchMode="singleTask"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.dktechhub.applock.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.dktechhub.applock.MainActivity" />
         </activity>
         <activity
-            android:name=".utils.LockActivity"
+            android:name="com.dktechhub.applock.utils.LockActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:noHistory="true"
             android:screenOrientation="portrait" />
 
 
-        <meta-data
-            android:name="com.android.vending.splits.required"
-            android:value="true" />
-        <meta-data
-            android:name="com.android.stamp.source"
-            android:value="https://play.google.com/store" />
-        <meta-data
-            android:name="com.android.stamp.type"
-            android:value="STAMP_TYPE_DISTRIBUTION_APK" />
-        <meta-data
-            android:name="com.android.vending.splits"
-            android:value="@xml/splits0" />
-        <meta-data
-            android:name="com.android.vending.derived.apk.id"
-            android:value="8" />
+
 
 
     </application>
