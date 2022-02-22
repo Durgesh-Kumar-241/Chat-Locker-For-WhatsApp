@@ -67,6 +67,7 @@ public class LockActivity extends AppCompatActivity {
 
     @Override // androidx.activity.ComponentActivity
     public void onBackPressed() {
+
     }
 
     /* access modifiers changed from: protected */
@@ -83,23 +84,7 @@ public class LockActivity extends AppCompatActivity {
         showLockScreenFragment();
     }
 
-    /* access modifiers changed from: protected */
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity
-    public void onStop() {
-        try {
-            if (this.fromService != null && this.fromService.equalsIgnoreCase("Chat") && !this.closeChat) {
-                Intent intent = new Intent();
-                intent.setClassName("com.whatsapp", "com.whatsapp.HomeActivity");
-                intent.addFlags(1342177280);
-                intent.addFlags(67108864);
-                startActivityForResult(intent, 9);
-                finish();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        super.onStop();
-    }
+
 
     private void showLockScreenFragment() {
         new PFPinCodeViewModel().isPinCodeEncryptionKeyExist().observe(this, new Observer<PFResult<Boolean>>() {

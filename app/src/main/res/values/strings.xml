@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Chat Locker For WhatsApp</string>
+    <string name="app_name">App Locker</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
 
-    <string name="accessibility_service_des">Allow the Accessibility service to enable chat locker for your device</string>
+    <string name="accessibility_service_des">Allow the Accessibility service to enable app locker for your device</string>
     <string name="version">Version</string>
     <string name="version_key">version_key</string>
     <string name="consent_key">consent_key</string>
@@ -37,7 +37,7 @@
     <string name="form_cancel">Cancel</string>
     <string name="title_activity_settings">Settings</string>
     <string name="yes">Yes</string>
-    <string name="auto_start_title">Auto Start App</string>
+    <string name="auto_start_title">Auto Start</string>
     <string name="accessibility_service_title">Accessibility Service</string>
     <string name="changepin">Change Pin</string>
     <string name="fingerprint_auth">Fingerprint Authorization</string>
@@ -47,7 +47,7 @@
     <string name="changepinSummery">Change your lock pin</string>
     <string name="changepinDialog">Change your pin</string>
     <string name="f69no">No</string>
-    <string name="share_app_message">"Hey there, Use this Awesome app to Lock your WhatsApp Chats, and keep them Private…Download ChatLocker for WhatsApp Now :https://play.google.com/store/apps/details?id=%s"</string>
+    <string name="share_app_message">"Hey there, Use this Awesome app to Lock your apps and prevent others from looking into your personal data, Download App Locker now:https://play.google.com/store/apps/details?id=%s"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
